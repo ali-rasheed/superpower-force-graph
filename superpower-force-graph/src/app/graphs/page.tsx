@@ -5,11 +5,8 @@ import ForceGraph3D from 'react-force-graph-3d';
 
 import { useMemo, useCallback, useState } from "react";
 import THREE from 'three';
-
 const Home = () => {
   const imgs = [{ img: 'a.jpg', collapsed: false, childlinks: [] }, { img: 'a.jpg', collapsed: false, childlinks: [] }, { img: 'a.jpg', collapsed: false, childlinks: [] }, { img: 'a.jpg', collapsed: false, childlinks: [] }];
-
-
 
   return (<>
     <ForceGraph2D
@@ -43,3 +40,5 @@ const Home = () => {
   </>
   )
 }
+
+export default Home;
