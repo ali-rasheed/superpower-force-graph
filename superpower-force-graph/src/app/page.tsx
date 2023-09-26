@@ -21,36 +21,15 @@ export default function Home() {
         target: Math.round(Math.random() * (id - 1))
       }))
   };
-
+  const DynamicGraph = dynamic(() => import('./graphs/SuperForceGraph'), { ssr: false });
   return (
 
     <main
       className='w-full flex-1 px-20 text-center
       bg-white'
     >
+      <DynamicGraph gData={gData} />
 
-
-      <ForceGraph3D
-        graphData={gData}
-        nodeOpacity={1} // node opacity
-        nodeResolution={8} // how thick the node is
-        nodeVal={1} // node size
-        nodeLabel='id'
-        backgroundColor='white'
-        linkWidth={.25}
-        linkOpacity={1}
-        linkColor='black'
-        nodeThreeObject={({ img }) => {
-          const imgTexture = new THREE.TextureLoader().load(`./imgs/level-01/${img}`);
-          imgTexture.colorSpace = THREE.SRGBColorSpace;
-          const material = new THREE.SpriteMaterial({ map: imgTexture });
-          const sprite = new THREE.Sprite(material);
-          sprite.scale.set(16, 16, 1);
-
-          return sprite;
-        }}
-
-      />
     </main>
   )
 }
