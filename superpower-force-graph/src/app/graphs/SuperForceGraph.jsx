@@ -6,10 +6,6 @@ import * as THREE from 'three';
 const MyForceGraph = (graphData 
   ) => {
 
-
-  return (
-    
   
-  );
 }
 export default MyForceGraph;
